@@ -9,7 +9,7 @@ public class RoK_For_02 {
                 }
                 indentation++;
             }
-            System.out.print("*");
+            System.out.print("#");
             if (column == 10) {
                 System.out.print("\n");
                 column = 0;
