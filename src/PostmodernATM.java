@@ -5,14 +5,22 @@ public class PostmodernATM {
         int banknotes[] = {5, 10, 20, 50, 100, 200, 500, 1_000, 2_000, 5_000, 10_000, 20_000};
         int[] cash = new int[banknotes.length];
         int step = banknotes.length - 1;
-        int requiredCash;
+        int requiredCash = 0;
 
         //Adatbekérés
         boolean isInputCorrect = false;
         do {
+            // read totalRequiredCash
             System.out.println("Kérlek add meg az igényelt összeget: ");
             Scanner scanner = new Scanner(System.in);
+            if (!scanner.hasNextInt()) {
+                System.out.println("Kérem csak számot adjon meg!");
+                isInputCorrect = false;
+                continue;
+            }
             int totalRequiredCash = scanner.nextInt();
+
+            // validating totalRequiredCash value
             requiredCash = totalRequiredCash;
             if (totalRequiredCash > 4 && totalRequiredCash < 500_001) {
                 isInputCorrect = true;
@@ -23,13 +31,13 @@ public class PostmodernATM {
                 System.out.println("Az automata 5 Ft-nál kisebb érmét nem tud kiadni. Ezt kérlek vedd figyelembe az összeg megadása során.");
                 isInputCorrect = false;
             }
-        } while (isInputCorrect == false);
+        } while (!isInputCorrect);
 
         //Címletek leszámolása kevesebb erőforrással
         while (step >= 0) {
-           cash[step] = requiredCash / banknotes[step];
-           requiredCash = requiredCash % banknotes[step];
-           step--;
+            cash[step] = requiredCash / banknotes[step];
+            requiredCash = requiredCash % banknotes[step];
+            step--;
         }
 
         // Kiiratás
