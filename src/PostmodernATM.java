@@ -14,7 +14,7 @@ public class PostmodernATM {
             System.out.println("Kérlek add meg az igényelt összeget: ");
             Scanner scanner = new Scanner(System.in);
             if (!scanner.hasNextInt()) {
-                System.out.println("Kérem csak számot adjon meg!");
+                System.out.println("Kérem csak számot adjon meg 5 és 500 000 Között!");
                 isInputCorrect = false;
                 continue;
             }
