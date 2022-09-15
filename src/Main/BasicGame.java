@@ -39,7 +39,7 @@ public class BasicGame {
             Thread.sleep(1000L);
         }
         catch (Exception e) {
-
+            System.out.println("sleep error");
         }
     }
 }

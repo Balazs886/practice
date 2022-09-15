@@ -7,10 +7,20 @@ public class CompareSwitch {
 
     public static void main(String args[]) {
         List<Integer> testData = generateData();
+        test4(testData);
+        test3(testData);
+        test2(testData);
         Integer[] result = test1(testData);
+
+        test1(testData);
         test2(testData);
         test3(testData);
         test4(testData);
+
+        test4(testData);
+        test3(testData);
+        test2(testData);
+        test1(testData);
 
         printResult(result);
     }
